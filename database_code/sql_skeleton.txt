@@ -1,0 +1,29 @@
+CREATE TABLE users (
+	id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	username varchar(20) NOT NULL,
+	is_author bit(1) NOT NULL,
+	is_artist bit(1) NOT NULL
+);
+
+CREATE TABLE webtoons (
+	id_author int,
+    FOREIGN KEY (id_author) REFERENCES users(id),
+	id_artist int,
+    FOREIGN KEY (id_artist) REFERENCES users(id),
+	link varchar(512) NOT NULL,
+	name varchar(50) NOT NULL,
+	id int NOT NULL PRIMARY KEY
+);
+
+CREATE TABLE top_comments (
+	id_user int,
+	FOREIGN KEY (id_user) REFERENCES users(id),
+	id_webtoon int,
+	FOREIGN KEY (id_webtoon) REFERENCES webtoons(id),
+	n_episode int NOT NULL,
+	upload_date date NOT NULL,
+	content varchar(500),
+	nb_replies int NOT NULL,
+	nb_upvotes int NOT NULL,
+	nb_downvotes int NOT NULL
+);

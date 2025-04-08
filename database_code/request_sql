@@ -1,0 +1,7 @@
+SELECT COUNT(content) as nb_comments, username
+FROM top_comments, users
+WHERE users.id = top_comments.id_user
+GROUP BY id_user
+ORDER BY nb_comments DESC
+LIMIT 10;
+

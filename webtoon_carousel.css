@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* padding and border is included in the elemnt's width/height*/
+  }
+
+body {
+    background-image: url("images/test_bg2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carousel{
+    height: calc(var(--vh, 1vh) * 100); /* Use dynamic vh */
+    width: 100vw;
+    position: relative; /* static element that will serve as a reference point for all elements in the carousel*/
+    overflow: hidden; /* hides previous/next sliders*/
+    padding: 0;
+  }
+
+.arrow {
+  position: absolute;
+  border: solid black;
+  border-width: 0 1.5vw 1.5vw 0;
+  display: inline-block;
+  padding: 1.5vw;
+  background: none;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.5s ease-in-out;
+  z-index: 1; /* ensure the arrow is ACTUALLY clickable */
+}
+
+.up {
+  transform: translateX(-50%) rotate(-135deg);
+  top: 4vw;
+}
+
+.down {
+  transform: translateX(-50%) rotate(45deg);
+  bottom: 4vw;
+}
+
+
+@media (max-width: 600px){
+  .arrow {
+    border-width: 0 4vw 4vw 0;
+    padding: 4vw;
+  }
+
+  .up {
+    top:  8vw;
+  }
+  
+  .down {
+    bottom: 8vw;
+  }
+}
+
+
+.arrow.up:hover {
+  transform: translateX(-50%) rotate(-135deg) scale(1.2);  /* Slightly scale the button */
+}
+
+.arrow.down:hover {
+  transform: translateX(-50%) rotate(45deg) scale(1.2);  /* Slightly scale the button */
+}
+
+ul {
+  transition: transform 1s ease-in-out; /* Smooth transition */
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  list-style: none;
+}
+
+.slide {
+  height: calc(var(--vh, 1vh) * 100); 
+  width: 1000px; /* 100% of vp */
+  transform: translateX(calc(50vw - 500px));
+  display: flex; /* tries to fit eveything on one line if possible, otherwise uses multiple rows*/
+  flex-direction: column;
+  align-items: center; /* aligns vertically */
+  justify-content: center; /* aligns horizontally */
+  background-color: #f2f2f2;
+}
+
+.title {
+  display: flex;
+  max-width: 800px; /* or whatever fits your design */
+  margin: 0 auto; /* Center the title */
+}
+
+.carousel .title .smol {
+  width: 30%;
+  height: auto;
+}

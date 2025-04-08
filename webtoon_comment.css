@@ -1,0 +1,49 @@
+.comment_container {
+    width: fit-content;
+    max-width: 580px;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 0 7px #36454F;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+}
+
+p {
+    font-size: 2em;
+}
+
+.username {
+    display: inline-block;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+.comment_content {
+    margin-top: 10px;
+    margin-bottom: 14px;
+    display: block;
+    max-width: 100%; /* Ensures the content doesn't exceed the container */
+    word-wrap: break-word;
+}
+
+.votes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.upvote_block, .downvote_block {
+    display: flex;
+    align-items: center; /* Center vertically */
+    gap: 10px;
+    background-color: #E5EBEE;
+    border-radius: 25px;
+    padding: 8px;
+}
+
+.upvote_block img, .downvote_block img {
+    max-height: 20px; /* Adjust this value to fit the text line height */
+    width: auto; /* Maintain aspect ratio */
+}
