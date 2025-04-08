@@ -1,5 +1,5 @@
 # Webtoon Stats
-Un projet permettant d'afficher des statistiques sue les commentaires d'un webtoon donné.
+Un projet permettant d'afficher des statistiques sur les commentaires d'un webtoon donné.
 
 ## :x: Etat actuel du projet
 Ce projet n'est pas fonctionnel actuellement.
