@@ -16,7 +16,7 @@ Un changement récent dans la structure du site Webtoon a cassé le scraping via
 
 ### 2. Créer la base de donnée
 - ouvrir phpMyAdmin depuis XAMPP
-- créer son utiliseateur
+- créer son utilisateur
 - créer la base de donnée "webtoon_scraping"
 - ajouter les tables avec le sql dans "sql_skeleton.txt"
 - ajouter ses identifiants à "init_database.py"
